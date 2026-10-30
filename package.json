@@ -12,14 +12,18 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@fastify/swagger": "^9.9.2",
+    "@scalar/fastify-api-reference": "^1.76.3",
     "@sequelize/core": "^7.0.0-alpha.48",
     "@sequelize/postgres": "^7.0.0-alpha.48",
     "fastify": "^5.12.7",
     "fastify-pino-pretty": "^5.2.1",
+    "fastify-type-provider-zod": "^7.0.0",
     "sequelize": "^6.37.8",
     "zod": "^4.6.7"
   },
   "devDependencies": {
-    "dotenv": "^18.0.9"
+    "dotenv": "^18.0.9",
+    "sequelize-cli": "^6.6.5"
   }
 }
