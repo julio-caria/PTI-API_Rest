@@ -1,0 +1,19 @@
+GET http://localhost:3000/api/v1/product
+
+### 
+POST http://localhost:3000/api/v1/product
+
+Content-Type: application/json
+
+{
+  "name": "Fone de Ouvido Sem Fio HUAWEI FreeBuds Pro 5",
+  "description": "Ouça o que você quiser e ignore o que não quiser com ANC de driver duplo e um modelo de detecção MIMO AI em tempo real. Os HUAWEI FreeBuds Pro 5 bloqueiam o ruído, mantendo você concentrado e imerso no metrô ou na academia.",
+  "imageUrl": "https://http2.mlstatic.com/D_NQ_NP_2X_990763-MLA108616683409_032026-F.webp",
+  "stockUnit": 10,
+  "price": 90
+}
+
+### 
+
+DELETE http://localhost:3000/api/v1/product/d7893123-467a-4ab9-a8a4-526f3b8fdffd
+
