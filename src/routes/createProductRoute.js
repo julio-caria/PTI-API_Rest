@@ -12,8 +12,8 @@ export function createProductRoute() {
         name: z.string().min(1),
         description: z.string(),
         imageUrl: z.string().url().min(1),
-        stockUnit: z.number().default(0),
-        price: z.number(),
+        stockUnit: z.coerce.number().default(0),
+        price: z.coerce.number().positive(),
       }),
       response: { 
         201: z.object({ 
