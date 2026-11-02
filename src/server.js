@@ -6,6 +6,7 @@ import { createProductRoute } from './routes/createProductRoute.js';
 import { jsonSchemaTransform, serializerCompiler, validatorCompiler } from 'fastify-type-provider-zod';
 import fastifySwagger from '@fastify/swagger';
 import scalarAPIReference from "@scalar/fastify-api-reference"
+import fastifyCors from '@fastify/cors';
 import { deleteProductRoute } from './routes/deleteProductRoute.js';
 
 const { PORT } = process.env
@@ -76,7 +77,13 @@ if(process.env.NODE_ENV === "development") {
       }
     },
   })
+
 }
+
+server.register(fastifyCors, { 
+  origin: '*',
+  methods: ["GET", "POST", "PUT", "DELETE"]
+})
 
 server.register(getProductRoute);
 server.register(createProductRoute);

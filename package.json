@@ -5,13 +5,14 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --watch --no-warnings src/server.js"
+    "dev": "node --watch --no-warnings src/server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Júlio Caria",
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@fastify/cors": "^11.4.0",
     "@fastify/swagger": "^9.9.2",
     "@scalar/fastify-api-reference": "^1.76.3",
     "@sequelize/core": "^7.0.0-alpha.48",
