@@ -30,6 +30,11 @@ export const Product = db.define(
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
+    isActive: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true,
+    },
     createdAt: { 
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,

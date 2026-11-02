@@ -8,6 +8,7 @@ import fastifySwagger from '@fastify/swagger';
 import scalarAPIReference from "@scalar/fastify-api-reference"
 import fastifyCors from '@fastify/cors';
 import { deleteProductRoute } from './routes/deleteProductRoute.js';
+import { getProductRouteById } from './routes/getProductByIdRoute.js';
 
 const { PORT } = process.env
 
@@ -88,5 +89,6 @@ server.register(fastifyCors, {
 server.register(getProductRoute);
 server.register(createProductRoute);
 server.register(deleteProductRoute);
+server.register(getProductRouteById);
 
 export { server };

@@ -33,7 +33,9 @@ export function getProductRoute() {
     }
   }, async (request, reply) => {
     try { 
-      const result = await Product.findAll();
+      const result = await Product.findAll({
+        where: { isActive: true },
+      });
   
       if(result.length === 0) { 
         return reply.status(404).send({ message: "No products found" })

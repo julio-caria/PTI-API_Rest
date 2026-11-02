@@ -15,5 +15,7 @@ Content-Type: application/json
 
 ### 
 
-DELETE http://localhost:3000/api/v1/product/d7893123-467a-4ab9-a8a4-526f3b8fdffd
+DELETE http://localhost:3000/api/v1/product/ebb8f544-f504-4ccd-a25a-7a2ce35e8987
+### 
 
+GET http://localhost:3000/api/v1/product/ebb8f544-f504-4ccd-a25a-7a2ce35e8987

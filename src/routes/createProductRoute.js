@@ -13,7 +13,7 @@ export function createProductRoute() {
         description: z.string(),
         imageUrl: z.string().url().min(1),
         stockUnit: z.number().default(0),
-        price: z.coerce.number(),
+        price: z.number(),
       }),
       response: { 
         201: z.object({ 

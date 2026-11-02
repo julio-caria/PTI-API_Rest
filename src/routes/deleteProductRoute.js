@@ -6,8 +6,8 @@ export function deleteProductRoute() {
   server.delete("/api/v1/product/:id", { 
     schema: { 
       tags: ["Products"],
-      summary: "Delete Product",
-      description: "Permanently removes a product from the catalog by its ID.",
+      summary: "Deactivate Product",
+      description: "Deactivates a product in the catalog by its ID.",
       params: z.object({
         id: z.uuid("Invalid product ID format"),
       }),
@@ -23,17 +23,23 @@ export function deleteProductRoute() {
   }, async (request, reply) => {
     const { id } = request.params;
     try { 
-      const product = await Product.destroy({ 
-        where: { id: id } 
-      })
-
-      if(!product) { 
+      const [updatedProducts] = await Product.update(
+        { isActive: false },
+        { 
+          where: { 
+            id,
+            isActive: true,
+          } 
+        }
+      )
+      if(!updatedProducts) { 
         return reply.status(404).send({ message: "Product not found"})
       }
-
+  
       return reply.status(200).send({ message: "Product deactivated" })
     } catch (error) { 
-      return request.log.error(error);
+      request.log.error(error);
+      return reply.status(500).send({ message: "Internal server error" });
     }
   })
 }
