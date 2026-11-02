@@ -18,9 +18,6 @@ export function deleteProductRoute() {
         404: z.object({
           message: z.string(),
         }),
-        500: z.object({
-          message: z.string(),
-        })
       }
     }
   }, async (request, reply) => {
@@ -29,17 +26,14 @@ export function deleteProductRoute() {
       const product = await Product.destroy({ 
         where: { id: id } 
       })
-      console.log(product);
-      
+
       if(!product) { 
         return reply.status(404).send({ message: "Product not found"})
       }
 
-      await Product.destroy(product);
-
       return reply.status(200).send({ message: "Product deactivated" })
     } catch (error) { 
-      return reply.status(500).send({ message: error });
+      return request.log.error(error);
     }
   })
 }
