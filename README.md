@@ -9,14 +9,15 @@ O projeto foi desenvolvido por Julio Caria, estudante de Tecnologia em Sistemas 
 > **DETALHE:** A modelagem deve possuir uma única tabela
 
 2. Implementar os endpoints que permitem o gerenciamento do catálogo de produtos, devem ser planejados como:
-  - `POST`: /produto
-  - `GET`: /produto?nome=
-  - `PUT`: /produto:/id
-  - `DELETE`: /produto:/id
+  - `POST`: `/produto`
+  - `GET`: `/produto?nome=`
+  - `PUT`: `/produto:/id`
+  - `DELETE`: `/produto:/id`
 
 ## Stack
 
-- Framework: Fastify - Documentação
-- ORM: Sequelize - Documentação
-- Documentação da API: Swagger - Documentação
-- JavaScript Runtime Environment: NodeJS - Documentação
+- Framework: Fastify - [Documentação](https://fastify.dev)
+- ORM: Sequelize - [Documentação](https://sequelize.org/docs/v6/)
+- Documentação da API: Swagger - [Documentação](https://swagger.io)
+- JavaScript Runtime Environment: NodeJS - [Documentação](https://nodejs.org/pt-br)
+- Validação (Input e Output): Zod - [Documentação](https://zod.dev)
