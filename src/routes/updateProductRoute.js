@@ -6,7 +6,7 @@ export function updateProductRoute() {
   server.put("/api/v1/product/:id", { 
     schema: { 
       tags: ["Products"],
-      summary: "Update an info of product ",
+      summary: "Update an product's info ",
       description: "Update attribute of product to change catalogue, use ID like params and send information on body (Name, Description, imageUrl, Price or StockUnit)",
       params: z.object({ 
         id: z.uuid(),

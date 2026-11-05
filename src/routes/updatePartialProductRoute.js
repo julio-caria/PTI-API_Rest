@@ -7,7 +7,7 @@ export function updatePartialProductRoute() {
     schema: { 
       tags: ["Products"],
       summary: "Update Product",
-      description: "Change partial attributes any product with UUID",
+      description: "Change partial attributes any product sending UUID on request params",
       body: z.object({
         name: z.string().min(1, "A name is required").optional(),
         description: z.string().optional(),

@@ -7,7 +7,7 @@ export function createProductRoute() {
     schema: {
       tags: ["Products"],
       summary: "Create Product",
-      description: "",
+      description: "Use this endpoint to register a new product on database, send required information, return product's UUID ",
       body: z.object({ 
         name: z.string().min(1),
         description: z.string(),
