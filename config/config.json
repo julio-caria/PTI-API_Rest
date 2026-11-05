@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "senac",
+    "password": "postgres",
+    "database": "dev_apiRest",
+    "host": "localhost",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "senac",
+    "password": "postgres",
+    "database": "dev_apiRest_test",
+    "host": "localhost",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "senac",
+    "password": "postgres",
+    "database": "dev_apiRest",
+    "host": "localhost",
+    "port": 5432,
+    "dialect": "postgres"
+  }
+}

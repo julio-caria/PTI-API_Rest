@@ -21,3 +21,4 @@ O projeto foi desenvolvido por Julio Caria, estudante de Tecnologia em Sistemas 
 - Documentação da API: Swagger - [Documentação](https://swagger.io)
 - JavaScript Runtime Environment: NodeJS - [Documentação](https://nodejs.org/pt-br)
 - Validação (Input e Output): Zod - [Documentação](https://zod.dev)
+- Docker (Container) - [Documentação]()

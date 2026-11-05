@@ -8,16 +8,16 @@ export function updateProductRoute() {
       tags: ["Products"],
       summary: "Update an info of product ",
       description: "Update attribute of product to change catalogue, use ID like params and send information on body (Name, Description, imageUrl, Price or StockUnit)",
-      params: { 
+      params: z.object({ 
         id: z.uuid(),
-      },
-      body: { 
+      }),
+      body: z.object({ 
         name: z.string(),
         description: z.string(),
         imageUrl: z.string().optional().nullable(),
         price: z.coerce.number().positive(),
         stockUnit: z.coerce.number().int(),
-      },
+      }),
       response: { 
         200: z.object({
           id: z.string(),
@@ -45,26 +45,26 @@ export function updateProductRoute() {
     const { name, description, imageUrl, price, stockUnit } = request.body;
 
     try { 
-      const product = await Product.findOne(
-        { isActive: true },
-        {
-          where: { id: id }
-        }
-      )
+      const product = await Product.findOne({
+        where: {
+          id,
+          isActive: true,
+        },
+      });
 
       if(!product) { 
         return reply.status(404).send({ message: "Product not found" });
       }
 
-      await Product.update({
+      const updatedProduct = await product.update({
         name,
         description,
         imageUrl,
         price,
         stockUnit
-      })
+      });
 
-      return reply.status(200).send(product)
+      return reply.status(200).send(updatedProduct)
 
     } catch (error) { 
       request.log.error(error);

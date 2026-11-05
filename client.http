@@ -2,7 +2,6 @@ GET http://localhost:3000/api/v1/product
 
 ### 
 POST http://localhost:3000/api/v1/product
-
 Content-Type: application/json
 
 {
@@ -18,4 +17,26 @@ Content-Type: application/json
 DELETE http://localhost:3000/api/v1/product/ebb8f544-f504-4ccd-a25a-7a2ce35e8987
 ### 
 
-GET http://localhost:3000/api/v1/product/ebb8f544-f504-4ccd-a25a-7a2ce35e8987
+GET http://localhost:3000/api/v1/product/c0675063-ef39-4e37-a101-766ce2ca9c1d
+
+### 
+
+PATCH http://localhost:3000/api/v1/product/c0675063-ef39-4e37-a101-766ce2ca9c1d
+Content-Type: application/json
+
+{
+  "price": 201.90
+}
+
+### 
+
+PUT http://localhost:3000/api/v1/product/c0675063-ef39-4e37-a101-766ce2ca9c1d
+Content-Type: application/json
+
+{
+  "name": "Fone de Ouvido Sem Fio FreeBuds Pro 5",
+  "description": "Ouça o que você quiser e ignore o que não quiser com ANC de driver duplo e um modelo de detecção MIMO AI em tempo real.",
+  "imageUrl": "https://http2.mlstatic.com/D_NQ_NP_2X_990763-MLA108616683409_032026-F.webp",
+  "stockUnit": 10,
+  "price": 90
+}
